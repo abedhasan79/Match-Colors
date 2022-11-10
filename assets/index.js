@@ -76,10 +76,13 @@ function checkMatch(){
     if(cardsChosenIds[0] === cardsChosenIds[1]){
         cards[cardsChosenIds[1]].setAttribute('style', 'background-color:gb(0, 174, 255)');
         cards[cardsChosenIds[0]].setAttribute('style', 'background-color:gb(0, 174, 255)');
+        document.getElementById('body-color').setAttribute('style','background-color: rgb(207, 136, 118)');
+
     }else if(cardChosen[0] === cardChosen[1]){
        
         cards[cardsChosenIds[0]].setAttribute('style', 'background-color:rgb(238, 126, 253)');
         cards[cardsChosenIds[1]].setAttribute('style', 'background-color:rgb(238, 126, 253)');
+        document.getElementById('body-color').setAttribute('style','background-color: rgb(146, 180, 148)');
         cards[cardsChosenIds[0]].removeEventListener('click', flipCard);
         cards[cardsChosenIds[1]].removeEventListener('click', flipCard);
         cardsWin.push(cardChosen);
@@ -87,13 +90,15 @@ function checkMatch(){
         
         cards[cardsChosenIds[0]].setAttribute('style', 'background-color:gb(0, 174, 255)');
         cards[cardsChosenIds[1]].setAttribute('style', 'background-color:gb(0, 174, 255)');
-
+        document.getElementById('body-color').setAttribute('style','background-color: rgb(207, 136, 118)');
     }
     score.innerHTML = cardsWin.length;
     cardChosen = [];
     cardsChosenIds = [];
     if(cardsWin.length === cardArray.length/2){
         score.innerHTML = 'You got them all'
+        document.getElementById('body-color').setAttribute('style','background-color: rgb(155, 146, 180)');
+
     }
 }
 
