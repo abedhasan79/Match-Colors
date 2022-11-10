@@ -126,7 +126,8 @@ function createBoard(){
 
 createBoard();
 
-function flipCard(){
+function flipCard(event){
+    event.preventDefault();
     const cardId = this.getAttribute('data-id');
     cardChosen.push(cardArray[cardId].name);
     cardsChosenIds.push(cardId);
