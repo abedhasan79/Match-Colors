@@ -114,9 +114,9 @@ function flipCard(){
     const cardId = this.getAttribute('data-id');
     cardChosen.push(cardArray[cardId].name);
     cardsChosenIds.push(cardId);
-    this.setAttribute('style', `background-color:${cardArray[cardId].color}`);
+    this.setAttribute('style', `transform-style: preserve-3d;perspective: 1000px;transform: rotateY(180deg);background-color:${cardArray[cardId].color}`);
     if(cardChosen.length ===2){
-        setTimeout(checkMatch, 500);
+        setTimeout(checkMatch, 600);
     }
 }
 

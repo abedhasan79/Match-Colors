@@ -23,9 +23,12 @@
     margin-left: 10px;
     margin-bottom: 10px;
     background-color: rgb(0, 174, 255);
-    transition: 1s;
+    
+    transition: 0.8s;
 }
-
+/* #grid h2::after{
+    transform: rotateY(180deg);
+} */
 #restart{
     /* margin-top: 5vh;
     margin-bottom: 5vh; */
