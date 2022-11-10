@@ -26,8 +26,8 @@ const cardArray=[
     },
 
     {
-        name:'Brown',
-        color: 'brown'
+        name:'Orange',
+        color: 'orange'
     },
 
     {
@@ -56,8 +56,8 @@ const cardArray=[
     },
 
     {
-        name:'Brown',
-        color: 'brown'
+        name:'Orange',
+        color: 'orange'
     },
 ]
 
@@ -68,28 +68,39 @@ cardArray.sort(()=>0.5 - Math.random());
 
 const grid = document.querySelector('#grid');
 const score = document.querySelector('#score');
+const attempt = document.querySelector('#attempt');
+let count = 10;
 let cardChosen = [];
 let cardsChosenIds =[];
 const cardsWin = [];
 function checkMatch(){
     const cards = document.querySelectorAll('h2');
+
     if(cardsChosenIds[0] === cardsChosenIds[1]){
         cards[cardsChosenIds[1]].setAttribute('style', 'background-color:gb(0, 174, 255)');
         cards[cardsChosenIds[0]].setAttribute('style', 'background-color:gb(0, 174, 255)');
-        document.getElementById('body-color').setAttribute('style','background-color: rgb(207, 136, 118)');
+        
 
     }else if(cardChosen[0] === cardChosen[1]){
        
-        cards[cardsChosenIds[0]].setAttribute('style', 'background-color:rgb(238, 126, 253)');
-        cards[cardsChosenIds[1]].setAttribute('style', 'background-color:rgb(238, 126, 253)');
+        // cards[cardsChosenIds[0]].setAttribute('style', 'background-color:rgb(238, 126, 253)');
+        // cards[cardsChosenIds[1]].setAttribute('style', 'background-color:rgb(238, 126, 253)');
         document.getElementById('body-color').setAttribute('style','background-color: rgb(146, 180, 148)');
         cards[cardsChosenIds[0]].removeEventListener('click', flipCard);
         cards[cardsChosenIds[1]].removeEventListener('click', flipCard);
         cardsWin.push(cardChosen);
     }else{
-        
+        count--;
         cards[cardsChosenIds[0]].setAttribute('style', 'background-color:gb(0, 174, 255)');
         cards[cardsChosenIds[1]].setAttribute('style', 'background-color:gb(0, 174, 255)');
+        attempt.innerHTML = count;
+        if(count<=0){
+            attempt.innerHTML = 'TRY AGAIN';
+            for(let j=0; j<cardArray.length;j++){
+                cards[cardsChosenIds[i]].removeEventListener('click', flipCard);
+            }
+           
+        }
         document.getElementById('body-color').setAttribute('style','background-color: rgb(207, 136, 118)');
     }
     score.innerHTML = cardsWin.length;
@@ -97,7 +108,7 @@ function checkMatch(){
     cardsChosenIds = [];
     if(cardsWin.length === cardArray.length/2){
         score.innerHTML = 'You got them all'
-        document.getElementById('body-color').setAttribute('style','background-color: rgb(155, 146, 180)');
+        document.getElementById('body-color').setAttribute('style','background-color: rgb(165, 221, 218); transition:3s');
 
     }
 }
