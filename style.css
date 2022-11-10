@@ -1,0 +1,36 @@
+*{
+    background-color: rgb(218, 208, 246);
+}
+
+#body{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#grid{
+    height: 400px;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#grid h2{
+    height: 80px;
+    width: 60px;
+    padding-top: 35px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(0, 174, 255);
+}
+
+#restart{
+    /* margin-top: 5vh;
+    margin-bottom: 5vh; */
+    background-color: bisque;
+    color: blue;
+    border: 2px solid blue;
+    height: 50px;
+    width: 100px;
+}
