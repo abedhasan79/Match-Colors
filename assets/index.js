@@ -74,18 +74,17 @@ const cardsWin = [];
 function checkMatch(){
     const cards = document.querySelectorAll('h2');
     if(cardsChosenIds[0] === cardsChosenIds[1]){
-        alert('you clicked the same card')
         cards[cardsChosenIds[1]].setAttribute('style', 'background-color:gb(0, 174, 255)');
         cards[cardsChosenIds[0]].setAttribute('style', 'background-color:gb(0, 174, 255)');
     }else if(cardChosen[0] === cardChosen[1]){
-        alert('you found a match');
+       
         cards[cardsChosenIds[0]].setAttribute('style', 'background-color:rgb(238, 126, 253)');
         cards[cardsChosenIds[1]].setAttribute('style', 'background-color:rgb(238, 126, 253)');
         cards[cardsChosenIds[0]].removeEventListener('click', flipCard);
         cards[cardsChosenIds[1]].removeEventListener('click', flipCard);
         cardsWin.push(cardChosen);
     }else{
-        alert('try again');
+        
         cards[cardsChosenIds[0]].setAttribute('style', 'background-color:gb(0, 174, 255)');
         cards[cardsChosenIds[1]].setAttribute('style', 'background-color:gb(0, 174, 255)');
 
